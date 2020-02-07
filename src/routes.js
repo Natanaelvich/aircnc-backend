@@ -10,6 +10,10 @@ import BookingController from './controllers/BookingController'
 const routes = express.Router()
 const upload = multer(uploadConfig)
 
+routes.get('/', (req, res) => {
+  res.json({ msg: 'Hello' })
+})
+
 routes.get('/user', SessionController.index)
 routes.post('/sessions', SessionController.store)
 
