@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 
 import routes from './routes'
+import 'dotenv/config'
 
 const PORT = process.env.PORT
 const server = express()
