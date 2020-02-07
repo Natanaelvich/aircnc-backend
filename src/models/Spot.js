@@ -1,4 +1,5 @@
-import mongoose, { Schema } from 'mongoose'
+const { Schema } = require('mongoose')
+const mongoose = require('mongoose')
 
 const SpotSchema = new Schema({
   thumbnail: String,
@@ -11,4 +12,4 @@ const SpotSchema = new Schema({
   },
 })
 
-export default mongoose.model('spots', SpotSchema)
+module.exports = mongoose.model('spots', SpotSchema)

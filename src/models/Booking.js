@@ -1,4 +1,5 @@
-import mongoose, { Schema } from 'mongoose'
+const { Schema } = require('mongoose')
+const mongoose = require('mongoose')
 
 const BokkingSchema = new Schema({
   date: String,
@@ -13,4 +14,4 @@ const BokkingSchema = new Schema({
   },
 })
 
-export default mongoose.model('bokkings', BokkingSchema)
+module.exports = mongoose.model('bokkings', BokkingSchema)

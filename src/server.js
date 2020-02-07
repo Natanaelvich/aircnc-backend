@@ -1,9 +1,9 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import cors from 'cors'
+const express = require('express')
+const mongoose = require('mongoose')
+const cors = require('cors')
 
-import routes from './routes'
-import 'dotenv/config'
+const routes = require('./routes')
+require('dotenv/config')
 
 const server = express()
 
@@ -20,16 +20,6 @@ mongoose
   })
 
 server.use(cors())
-server.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Credentials', true)
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
-  )
-  next()
-})
 server.use(express.json())
 server.use(routes)
 
