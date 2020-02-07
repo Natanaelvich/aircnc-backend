@@ -20,7 +20,8 @@ const SpotSchema = new Schema(
 )
 
 SpotSchema.virtual('thumbnail_url').get(function() {
-  return `https://aircnc-backed.herokuapp.com/files/${this.thumbnail}`
+  return `${process.env.URL_APP_UPLOADS ||
+    'http://localhost:3333/files/'}${this.thumbnail}`
 })
 
 module.exports = mongoose.model('spots', SpotSchema)
