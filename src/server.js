@@ -1,15 +1,15 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import bodyParser from 'body-parser'
 
 import routes from './routes'
 
+const PORT = process.env.PORT
 const server = express()
 
 mongoose
   .connect(
-    'mongodb+srv://natanael:natanaelvich1997@cluster0-gmth0.mongodb.net/omnistack08?retryWrites=true&w=majority',
+    `mongodb+srv://${process.env.USER}:${process.env.PASS}@cluster0-gmth0.mongodb.net/omnistack08?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
@@ -23,6 +23,6 @@ server.use(cors())
 server.use(express.json())
 server.use(routes)
 
-server.listen(3333, () => {
+server.listen(PORT || 3333, () => {
   console.log('port 3333')
 })
