@@ -5,7 +5,6 @@ import cors from 'cors'
 import routes from './routes'
 import 'dotenv/config'
 
-const PORT = process.env.PORT
 const server = express()
 
 mongoose
@@ -24,6 +23,6 @@ server.use(cors())
 server.use(express.json())
 server.use(routes)
 
-server.listen(PORT || 3333, () => {
+server.listen(process.env.PORT || 3333, () => {
   console.log('port 3333')
 })
