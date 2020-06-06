@@ -10,7 +10,7 @@ const server = express()
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.USER}:${process.env.PASS}@cluster0-gmth0.mongodb.net/omnistack08?retryWrites=true&w=majority`,
+    `mongodb+srv://natanael:${process.env.PASS}@cluster0-gmth0.mongodb.net/omnistack08?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
